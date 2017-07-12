@@ -45,4 +45,16 @@ Object.assign(Point.prototype, {
 
 另外，对于任务六，主要是逻辑的实现，没有在语法上学习更新的东西，所以没有笔记。
 
+### 任务七 邮件地址验证
+
+#### 学习总结
+
+自己为数组对象增加了一种比较方法，函数也可以直接写进去。还可以运用一些数组已经有的方法，例如
+
+* indexOf()如果被查找的字符串在总的字符串中，indexof就会返回其索引，反之不然，利用这个原理。
+
+#### 学习笔记
+
+* [Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
 
