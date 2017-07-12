@@ -1,15 +1,14 @@
-module.exports = function main(email, suffixes) {
-	Array.prototype.contains = function ( needle ) {
-  		for (i in this) {
-    		if (this[i] == needle) return true;
-  		}
-  		return false;
+module.exports = function main(num) {
+    var numbers = [[['._.'],['|.|'],['|_|']],[['...'],['..|'],['..|']],[['._.'],['._|'],['|_.']],[['._.'],['._|'],['._|']],[['...'],['|_|'],['..|']],[['._.'],['|_.'],['._|']],[['._.'],['|_.'],['|_|']],[['._.'],['..|'],['..|']],[['._.'],['|_|'],['|_|']],[['._.'],['|_|'],['..|']]];
+	var result = new Array;
+	for(var i=0;i<3;i++){
+		for(var j=0;j<num.length;j++){
+			result+=numbers[parseInt(num.charAt(j))][i];
+			if(j!=num.length-1){
+				result+=' ';//不是最后一位再加一个空格
+			}
+		}
+		result+='\n';//每行增加换行符
 	}
-
-	var suffix=email.split('@')[1];
-	if(suffixes.contains(suffix)){
-		return true;
-	}else{
-		return false;
-	}
+	return result;
 };
