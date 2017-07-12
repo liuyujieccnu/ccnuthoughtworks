@@ -1,35 +1,31 @@
-module.exports = function main() {
-    let sequence = new Sequence([6, 9, 15, -2, 92, 11]);
-    console.log(`o) 最小值 = ${sequence.minimum()}
-o) 最大值 = ${sequence.maximum()}
-o) 元素数量 = ${sequence.counter()}
-o) 平均值 = ${sequence.average()}`);
+const loadAllItems = require('./loadAllItems.js');
+
+module.exports = function main(inputs) {
+    var allitem = loadAllItems();
+    var num = new Array();
+    for(var i=0;i<allitem.length;i++){
+    	num[i]=0;
+    }
+    var sum = 0;
+    for(var i=0;i<inputs.length;i++){
+		for(var j=0;j<allitem.length;j++){
+			if(allitem[j]['barcode']==inputs[i]){
+				num[j]++;
+				sum+=allitem[j]['price'];
+			}
+		}
+	}
+	var str='***<没钱赚商店>购物清单***';
+	for(var i=0;i<num.length;i++){
+		if(num[i]!=0){
+			str+='\n名称：'+allitem[i]['name']+
+			'，数量：'+num[i]+allitem[i]['unit']+
+			'，单价：'+allitem[i]['price'].toFixed(2)+
+			'(元)，小计：'+(allitem[i]['price']*
+				num[i]).toFixed(2)+'(元)';
+		}
+	}
+	str+='\n----------------------\n总计：'+sum.toFixed(2)+'(元)'+'\n**********************';
+	return str;
+    var str='***<没钱赚商店>购物清单***';
 };
-
-class Sequence {
-  constructor(input) {
-    // Write your code here
-    this.input=input;
-  }
-
-  minimum() {
-    // Write your code here
-    this.input.sort(function sortNumber(a,b){
-        return a - b
-      });
-    return this.input[0];
-  }
-
-  maximum() {
-    return this.input[this.input.length-1]
-  }
-
-  counter() {
-    return this.input.length;
-  }
-
-  average() {
-    var sum = eval(this.input.join("+"));
-    return ~~(sum/this.input.length*100)/100;
-  }
-}
