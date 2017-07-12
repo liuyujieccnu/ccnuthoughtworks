@@ -18,7 +18,23 @@ Object.assign(Point.prototype, {
 });
 ```
 
-* 
+* 通过extends关键字，继承了父类的所有属性和方法。但是由于没有部署任何代码，所以这两个类完全一样，等于复制了一个父类。
 
+### 任务五 统计状态
+
+#### 学习总结
+
+这个任务并不难，但是有一些细节要注意，当然，从这个任务中也有学到一定的知识。
+
+#### 学习笔记
+
+* $开头一个匿名函数
+* join方法在数组的每个元素之间加上一个“符号”变成一个字符串 
+* 在本个任务中使用eval把字符串表示的代数式进行运算，实际上[eval()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/eval)函数会将传入的字符串当做JavaScript代码进行执行。避免在不必要的情况下使用eval，危险和效率低。
+* toFixed函数实现四舍五入保留小数。
+* 对于非数字，~~的结果为0，布尔的true是1
+* 对于大于0的数，~~相当于是Math.floor
+* 对于小于0的数，~~相当于是Math.ceil
+* ~~效率更高
 
 

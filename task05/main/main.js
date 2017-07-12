@@ -29,7 +29,12 @@ class Sequence {
   }
 
   average() {
-    var sum = eval(this.input.join("+"));
-    return ~~(sum/this.input.length*100)/100;
+    // var sum = eval(this.input.join("+"));避免eval的使用
+    var sum=0;
+    for(var i=0;i<this.input.length;i++){
+      sum+=this.input[i];
+    }
+    //return ~~(sum/this.input.length*100)/100;
+    return (sum/this.input.length).toFixed(2);
   }
 }
