@@ -1,0 +1,94 @@
+# 命令行相关
+
+## 文件/目录 命令总结
+
+### cd
+
+* 从一个文件夹转到另一个文件，更改当前工作目录
+* cd ..,转到上一级文件夹,一个点代表当前文件夹
+* cd -,返回进入此目录之前所在的目录
+
+### mkdir
+
+* 创建一个新的目录
+* mkdir dir1，创建一个叫做 'dir1' 的目录
+* mkdir -p dir1/dir11，递归创建多个目录，从dir1到dir11
+* mkdir dir1 dir2，同时创建两个目录
+
+### cp
+
+* 复制文件目录
+* cp file1 tdir1，复制 file1 到目录 dir1 下 
+* cp dir/* .，复制一个目录下的所有文件到当前工作目录
+
+### rm
+
+* 删除
+* rm file1，删除一个叫做 'file1' 的文件，系统会询问是否删除
+* rm -f file2，强行删除一个叫做 'file2' 的文件，系统不再提示
+* rm -r test1，将一个叫做 test1 的子目录及子目录中所有内容删除
+* rm -rf dir1，强行删除一个叫做 'dir1' 的目录并同时删除其内容 
+* rm -rf dir1 dir2，强行同时删除两个目录及它们的内容
+
+### mv
+
+* 移动文件或者文件改名
+* mv file1 file2，将文件 file1 重命名为 file2
+* mv file3 dir1，将 file3 文件移动到目录 dir1 中
+* mv dir1 dir2，如果目录 dir2 不存在，将目录 dir1 改名为dir2，否则，将 dir1 移动到 dir2 中
+
+### pwd
+
+* 显示当前工作路径
+
+### ls
+
+* 列举出当前工作目录的内容（文件或文件夹）
+* -a，列出所有，包含隐藏的文件夹
+* -l，列出包括文件的详细信息
+* ls -l t*，列出当前目录中所有以 "t" 开头的目录的详细信息
+
+### tar
+
+* 创建、查看和提取tar压缩文件
+* tar -cvf file.tar file1 file2，创建对应压缩文件
+* tar -tvf file.tar来查看对应压缩文件
+* tar -xvf file.tar来提取对应压缩文件。
+
+### zip（unzip）
+
+* 压缩解压命令
+* zip -r mydata.zip mydata，压缩mydata目录
+* unzip mydata.zip -d mydatabak，把当前目录下面的mydata.zip解压到mydatabak目录下
+* zip -r abc123.zip abc 123.txt，把当前目录下面的abc文件夹和123.txt压缩成为abc123.zip
+* unzip wwwroot.zip，把当前目录下面的wwwroot.zip直接解压到当前目录下
+* unzip abc\*.zip，把当前目录下面的abc*.zip同时解压到当前目录下
+* unzip -v wwwroot.zip 查看当前目录下面的wwwroot.zip里面的内容
+* unzip -t wwwroot.zip，验证当前目录下面的wwwroot.zip是否完整
+* unzip -j wwwroot.zip，把当前目录下面wwwroot.zip里面的所有文件解压到第一级目录
+
+### find
+
+* 在给定位置搜寻与条件匹配的文件
+* 你可以使用find file1 -name filename，-name选项来进行区分大小写的搜寻，在file1搜寻文件名为filename的文件
+* find file1 -iname filename，来进行不区分大小写的搜寻
+
+### grep
+
+* grep "<string>" <file-name>，在给定的文件中搜寻指定的字符串
+* grep -i "<string>" <file-name>，搜寻时会忽略字符串的大小写
+* grep -r "<string>" <file-name>，在当前工作目录的文件中递归搜寻指定的字符串
+
+### less
+
+* less <file-name>,按页或按窗口打印文件内容，使用Ctrl+F向前翻页，Ctrl+B向后翻页
+
+### tail
+
+* tail <file-name>,默认在标准输出上显示给定文件的最后10行内容
+* tail -n N <file-name>,指定在标准输出上显示文件的最后N行内容
+
+### tree
+
+* 树状图列出目录内容
+
